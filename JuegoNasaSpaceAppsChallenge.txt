@@ -54,10 +54,48 @@ Cada decisión representaría un compromiso entre tres variables: Tiempo, presup
 
 - Modos de operación por módulo:
 
-	* Modo Nominal
+	* Modo Nominal....
 
 
 5 módulos libres por partida. En total 8...
+
+Los módulos de la base cuentan con componentes que pueden servir otros usos en la base, en caso de dañarse. 
+
+
+Variables de Simulación
+
+	1. Temperatura
+
+	2. Radiación
+
+	3. Humedad
+
+	4. Presión
+
+	5. Oxígeno
+
+	6. Clima Controlado
+
+	7. Data GB (Gestionar data en la misión)
+
+	8. Estado mental y físico del astronauta
+
+	9. Agua Potable
+
+	10. 
+
+El juego termina (Por ahora) en 5 minutos, que equivalen a tres días marcianos. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
