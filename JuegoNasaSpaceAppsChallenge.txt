@@ -88,12 +88,32 @@ El juego termina (Por ahora) en 5 minutos, que equivalen a tres días marcianos.
 
 
 
+-------------------------------------
+El juego debe tener 3 objetivos principales:
+
+1. El jugador debe tener 100GB de data útil.
+2. El jugador debe conservar funcionales al menos 2 módulos iniciales.
+3. El jugador no debe morir.
+-----------------------------------------------------------------
+
+La jugabilidad va a ser un entorno como FnaF, en el que el jugador se mueve en un espacio cerrado desplazándose con el mouse mediante el click a diferentes zonas de la base en las que tomará las decisiones, bien sea de reparación, uso o modificación de los módulos.
 
 
+-----------------------------------------------------------------
+Módulos- iniciales
 
+1-módulo extra de sensores de temperatura, bien sea para la base o para añadir al rover.
+2-módulo extra de tanques de oxigeno, usar en caso de bajo oxigeno en la base, al usar no lo puede reponer ni recrear, limita funcionalidades.
+3-modulo de camaras para el rover, una por misión y tiene el riesgo de romperse o quemarse debido a la radiación o a la temperatura
+4-módulo de cargadores de batería, riesgo de incendio o de pérdida de potencia.
 
+-----------------------------------------------------------------
+Luego de cada tarea los astronautas pierden energía, de acuerdo al nivel de energía, deberán descansar y no podrán desempeñar ninguna tarea.
 
+------------------------------------------------------------------
+Hola, muchachos.
 
+Organicen el documento, den datos de probabilidades, saquen datos de la api de la nasa, calculen potencias, energía que consume cada módulo. Para que ya sea solo implementar en godot. terminar antes del 14 de noviembre del 2026. Gracias
 
 
 
