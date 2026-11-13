@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[ext_resource type="Script" uid="uid://oayf1wcq8lv7" path="res://player_1.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://co4rqf1x2bed" path="res://pelota.gd" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kdb7"]
+size = Vector2(16, 100)
+
+[node name="main" type="Node2D" unique_id=1140457112]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=244383465]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.5469727, 0.18418765, 0.33513656, 1)
+
+[node name="player1" type="StaticBody2D" parent="." unique_id=50680106]
+position = Vector2(57, 289)
+script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="player1" unique_id=441800027]
+offset_left = -8.0
+offset_top = -50.0
+offset_right = 8.0
+offset_bottom = 50.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=712825774]
+shape = SubResource("RectangleShape2D_2kdb7")
+
+[node name="player2" type="StaticBody2D" parent="." unique_id=1434914122]
+
+[node name="ColorRect" type="ColorRect" parent="player2" unique_id=220181015]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2" unique_id=2144809407]
+
+[node name="ParedArriba" type="StaticBody2D" parent="." unique_id=1394981175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedArriba" unique_id=1223730148]
+
+[node name="ParedAbajo" type="StaticBody2D" parent="." unique_id=600029538]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedAbajo" unique_id=1980587721]
+
+[node name="pelota" type="CharacterBody2D" parent="." unique_id=849982328]
+script = ExtResource("2_h2yge")
+
+[node name="ColorRect" type="ColorRect" parent="pelota" unique_id=280702996]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelota" unique_id=2123028125]
