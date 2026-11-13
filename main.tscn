@@ -8,11 +8,6 @@ size = Vector2(16, 100)
 
 [node name="main" type="Node2D" unique_id=1140457112]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=244383465]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.5469727, 0.18418765, 0.33513656, 1)
-
 [node name="player1" type="StaticBody2D" parent="." unique_id=50680106]
 position = Vector2(57, 289)
 script = ExtResource("1_0xm2m")
@@ -55,3 +50,10 @@ offset_bottom = 40.0
 [node name="Button1" type="Button" parent="." unique_id=1732200823]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=244383465]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.5469727, 0.18418765, 0.33513656, 1)
+
+[node name="Node2D" type="Node2D" parent="ColorRect" unique_id=2091559528]

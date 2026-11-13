@@ -1,0 +1,71 @@
+Juego Nasa Space Apps Challenge
+
+
+Arquitectura de la base espacial:
+
+Al principio se determina una cantidad C de módulos referentes a:
+
+
+1. Energía y distribución
+
+	* Módulo Paneles solar: Alta generación durante día lunar/marciano, nula de noche o tormentas de polvo.
+	* Módulo RTG (Generador termoeléctrico por radioisótopos): Potencia base constante y baja, pero independiente de la luz solar.
+	* Módulo PDU "Unidad de Distribución de Energía" y Banco de Baterías: Almacena el exceso de energía y gestiona las líneas de potencia (DC 28V / 120V). Si la carga supera el límite, saltan las protecciones.
+	
+
+2. Soporte de Vida y Ambiente
+
+	* Módulo ECLSS: Encargados de controlar la electralisis del agua para generar O2 y filtrar el CO2 mediante lecho de aminas.  O2 (E) 
+	* Módulo HVAC y refrigerantes: Clima. Gestión de refrigerantes y radiadores externos para dispersar el calor o evitar la congelación.
+	* Módulos de Escudo Radiación: Generación de campos magnéticos de deflexión activo o gestión de regolito/agua en el techo para mitigar Eventos de Partículas Solares (SPE).
+	* Módulos de Air Lock: Control de presión interna y purga de fugas en la base principal.
+
+
+3. Operaciones y misón
+
+	* Módulo Cuarteles: Descanso y salud mental de los astronautas.
+	* Módulo Comms, Antenas RF: Sistemas de Antenas (Parábolas) de comunicación [Banda X/Ka] {f_X = 8 - 12 GHz; f_Ka = 26.5 - 40 GHz}. Sistemas de Apuntamiento (Tracking).
+	* Módulo de Robótica y Rovers. Mantenimiento de rovers, impresoras 3D para partes y despliegue.
+	* Módulo Extracción ISRU: Extracción de Agua del Regolito/Hielo subterráneo o procesamiento de Metano.
+
+
+
+MÉTRICAS DE DESEMPEÑO
+
+
+- Margen de Potencia: M_p = P_gen - P_cons. {si cae por debajo de 0, entra en descarga de baterías)
+
+- Carga de Batería.
+
+- Presión del gas
+
+- Balance Térmico. Delta_T. Diferencia entre disipación de calor interna y externa.
+
+- Exposición radiativa. mSv/h.
+
+- Tiempo medio entre fallos de componentes electrónicos/mecánicos debido a polvo, micro-impactos o desgaste.
+
+- Productividad. Eficiencia combinada de humanos y robots según la salud, cansacio y conectividad.
+
+
+DINÁMICA, FLUJO DEL JUEGO
+
+Cada decisión representaría un compromiso entre tres variables: Tiempo, presupuesto energético y riego/rendimiento.
+
+- Modos de operación por módulo:
+
+	* Modo Nominal
+
+
+5 módulos libres por partida. En total 8...
+
+
+
+
+
+
+
+
+
+
+
