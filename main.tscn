@@ -51,3 +51,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelota" unique_id=2123028125]
+
+[node name="Button1" type="Button" parent="." unique_id=1732200823]
+offset_right = 8.0
+offset_bottom = 8.0
