@@ -12,8 +12,8 @@ func _physics_process(delta: float) -> void:
 	
 	if collision:
 		var collider = collision.get_collider()
-		velocidad_actual = velocidad_actual.bounce(collision.get_normal())
-
+		velocidad_actual = velocidad_actual.bounce(collision.get_normal())*1.06
+		
 func reiniciar_pelota() -> void:
 	position = Vector2(576, 324) # Centro de la pantalla (1152x648)
 	

@@ -5,9 +5,9 @@ extends StaticBody2D
 func _physics_process(delta: float) -> void:
 	var direction := 0.0
 	
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_key_pressed(KEY_W):
 		direction -= 1.0
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_key_pressed(KEY_S):
 		direction += 1.0
 		
 	position.y += direction * speed * delta
