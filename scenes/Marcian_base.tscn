@@ -3,41 +3,69 @@
 [ext_resource type="Script" uid="uid://dvh2wo2jrhdns" path="res://scripts/marcian_base.gd" id="1_1nd0m"]
 [ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_g02ue"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ouxqx"]
+radius = 19.026299
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouxqx"]
 size = Vector2(80, 1083)
 
-[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("camera", "background")]
+[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("camera", "background", "btn_bateria")]
 script = ExtResource("1_1nd0m")
 camera = NodePath("Camera2D")
-background = NodePath("zone1/Sprite2D")
+background = NodePath("Sprite2D")
+btn_bateria = NodePath("zone1/Sprite2D")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2138648480]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1553830308]
-position = Vector2(588, 330)
-texture = ExtResource("2_g02ue")
-
-[node name="zone1" type="Node2D" parent="." unique_id=1695167134]
-
-[node name="Sprite2D" type="Sprite2D" parent="zone1" unique_id=1588712030]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1588712030]
 position = Vector2(580, 326.25)
 scale = Vector2(1.7002968, 1.4186813)
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2138648480]
+
+[node name="zone1" type="Node2D" parent="." unique_id=1695167134]
+
+[node name="boton_bateria" type="Area2D" parent="zone1" unique_id=70273510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone1/boton_bateria" unique_id=89262368]
+position = Vector2(132, 77)
+shape = SubResource("CircleShape2D_ouxqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="zone1" unique_id=2047774247]
+position = Vector2(133, 78)
+scale = Vector2(0.29687515, 0.29687503)
+texture = ExtResource("2_g02ue")
+
 [node name="right_zone" type="Node2D" parent="." unique_id=2006902994]
+visible = false
 
 [node name="Area2D" type="Area2D" parent="right_zone" unique_id=1702340969]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_zone/Area2D" unique_id=36182988]
+visible = false
 position = Vector2(1920, 540)
 shape = SubResource("RectangleShape2D_ouxqx")
 
 [node name="left_zone" type="Node2D" parent="." unique_id=1187178834]
+visible = false
 
 [node name="Area2D_2" type="Area2D" parent="left_zone" unique_id=146804816]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_zone/Area2D_2" unique_id=1844689101]
+visible = false
 position = Vector2(0, 540)
 shape = SubResource("RectangleShape2D_ouxqx")
 
+[node name="zone2" type="Node2D" parent="." unique_id=1672508752]
+visible = false
+
+[node name="zone3" type="Node2D" parent="." unique_id=1621791534]
+visible = false
+
+[node name="zone4" type="Node2D" parent="." unique_id=80232476]
+visible = false
+
+[connection signal="mouse_entered" from="zone1/boton_bateria" to="." method="_on_boton_bateria_mouse_entered"]
+[connection signal="mouse_exited" from="zone1/boton_bateria" to="." method="_on_boton_bateria_mouse_exited"]
 [connection signal="mouse_entered" from="right_zone/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_entered" from="left_zone/Area2D_2" to="." method="_on_area_2d_2_mouse_entered"]

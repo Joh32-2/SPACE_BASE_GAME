@@ -3,6 +3,8 @@ extends Node2D
 @export var camera: Camera2D
 @export var follow_speed: float = 1.0
 @export var background: Sprite2D
+@export var btn_bateria: Sprite2D
+
 
 @export_category("Configuración de la Cámara")
 @export var camera_zoom: Vector2 = Vector2(1, 1)
@@ -18,7 +20,8 @@ var zoom = false
 var debounce_time = 0.2
 
 # Banderas de control de debounce (evitan que se ejecute mientras espera)
-var can_click: bool = true
+var can_click_zoom: bool = true
+var can_click_interact: bool = true
 var can_change_zone: bool = true
 
 # Precargamos las texturas al iniciar la escena para que no causen lag
@@ -67,17 +70,26 @@ func _process(delta: float) -> void:
 
 # El clic del mouse se gestiona aquí de forma segura con debounce
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not can_click:
-			return # Si está en tiempo de espera, ignorar el clic
-		
-		can_click = false
-		zoom = !zoom
-		
-		# Esperar el tiempo de debounce de forma segura
-		await get_tree().create_timer(debounce_time).timeout
-		can_click = true
-
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if not can_click_zoom:
+				return # Si está en tiempo de espera, ignorar el clic
+			
+			can_click_zoom = false
+			zoom = !zoom
+			
+			# Esperar el tiempo de debounce de forma segura
+			await get_tree().create_timer(debounce_time).timeout
+			can_click_zoom = true
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+		#	if not can_click_interact:
+		#		return # Si está en tiempo de espera, ignorar el clic
+		#	
+		#	can_click_interact = false
+		#	
+		#	# Esperar el tiempo de debounce de forma segura
+		#	await get_tree().create_timer(debounce_time).timeout
+		#	can_click_interact = true
 # Función auxiliar para cambiar las texturas de forma limpia
 func update_background_texture() -> void:
 	last_zone = zone
@@ -115,3 +127,12 @@ func _on_area_2d_2_mouse_entered() -> void:
 	
 	await get_tree().create_timer(debounce_time).timeout
 	can_change_zone = true
+
+
+func _on_boton_bateria_mouse_entered() -> void:
+	btn_bateria.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	
+
+
+func _on_boton_bateria_mouse_exited() -> void:
+	btn_bateria.modulate = Color(1.0, 1.0, 1.0, 1.0)
