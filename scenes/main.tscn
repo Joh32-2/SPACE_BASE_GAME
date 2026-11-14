@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
-[ext_resource type="Script" uid="uid://oayf1wcq8lv7" path="res://player_1.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://dsm5rbkpfuv46" path="res://player_3.gd" id="2_1bvp3"]
-[ext_resource type="Script" uid="uid://co4rqf1x2bed" path="res://pelota.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://oayf1wcq8lv7" path="res://scripts/player_1.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://dsm5rbkpfuv46" path="res://scripts/player_3.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://co4rqf1x2bed" path="res://scripts/pelota.gd" id="3_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kdb7"]
 size = Vector2(16, 100)
@@ -25,7 +25,7 @@ size = Vector2(40, 40)
 
 [node name="player1" type="StaticBody2D" parent="." unique_id=50680106]
 position = Vector2(57, 289)
-script = ExtResource("1_0xm2m")
+script = ExtResource("1_sugp2")
 
 [node name="ColorRect" type="ColorRect" parent="player1" unique_id=441800027]
 offset_left = -8.0
@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_2kdb7")
 
 [node name="player3" type="StaticBody2D" parent="." unique_id=884940801]
 position = Vector2(1092.375, 289)
-script = ExtResource("2_1bvp3")
+script = ExtResource("2_jyhfs")
 
 [node name="ColorRect" type="ColorRect" parent="player3" unique_id=1856573101]
 offset_left = -8.0
@@ -74,7 +74,7 @@ shape = SubResource("SegmentShape2D_0xm2m")
 shape = SubResource("SegmentShape2D_h2yge")
 
 [node name="pelota" type="CharacterBody2D" parent="." unique_id=849982328]
-script = ExtResource("2_h2yge")
+script = ExtResource("3_tbgi4")
 
 [node name="ColorRect" type="ColorRect" parent="pelota" unique_id=280702996]
 offset_left = -20.0
