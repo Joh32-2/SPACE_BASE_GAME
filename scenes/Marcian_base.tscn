@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://qet1tfjqc86l"]
+
+[ext_resource type="Script" uid="uid://dvh2wo2jrhdns" path="res://scripts/marcian_base.gd" id="1_1nd0m"]
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_g02ue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouxqx"]
+size = Vector2(80, 1083)
+
+[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("camera", "background")]
+script = ExtResource("1_1nd0m")
+camera = NodePath("Camera2D")
+background = NodePath("zone1/Sprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2138648480]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1553830308]
+position = Vector2(588, 330)
+texture = ExtResource("2_g02ue")
+
+[node name="zone1" type="Node2D" parent="." unique_id=1695167134]
+
+[node name="Sprite2D" type="Sprite2D" parent="zone1" unique_id=1588712030]
+position = Vector2(580, 326.25)
+scale = Vector2(1.7002968, 1.4186813)
+
+[node name="right_zone" type="Node2D" parent="." unique_id=2006902994]
+
+[node name="Area2D" type="Area2D" parent="right_zone" unique_id=1702340969]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_zone/Area2D" unique_id=36182988]
+position = Vector2(1920, 540)
+shape = SubResource("RectangleShape2D_ouxqx")
+
+[node name="left_zone" type="Node2D" parent="." unique_id=1187178834]
+
+[node name="Area2D_2" type="Area2D" parent="left_zone" unique_id=146804816]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_zone/Area2D_2" unique_id=1844689101]
+position = Vector2(0, 540)
+shape = SubResource("RectangleShape2D_ouxqx")
+
+[connection signal="mouse_entered" from="right_zone/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_entered" from="left_zone/Area2D_2" to="." method="_on_area_2d_2_mouse_entered"]
