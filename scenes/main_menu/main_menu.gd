@@ -6,7 +6,7 @@ signal open_options
 signal quit_game
 
 # Precargamos las rutas de las escenas basándonos en tu estructura de carpetas
-@export var game_scene: PackedScene = preload("res://scenes/Marcian_Base.tscn")
+@export var game_scene: PackedScene = preload("res://scenes/Marcian_base.tscn")
 @export var settings_scene: PackedScene = preload("res://scenes/settings/settings.tscn")
 
 @export_category("Referencias de Nodos")
@@ -45,11 +45,3 @@ func _on_quit_pressed() -> void:
 	print("Saliendo del juego...")
 	emit_signal("quit_game")
 	get_tree().quit()
-
-
-func _on_button_new_game_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_settings_pressed() -> void:
-	pass # Replace with function body.
